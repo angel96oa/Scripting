@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: sysbench
+  name: sysbench-q-tiempo-sleep
+spec:
+  containers:
+  - command:
+    - sysbench
+    - --test=cpu
+    - --cpu-max-prime=q
+    - run
+    image: angel96eur/sysbench
+    name: sysbench    
+  restartPolicy: Never
